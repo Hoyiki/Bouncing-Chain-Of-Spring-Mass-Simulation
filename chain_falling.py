@@ -74,11 +74,13 @@ while (current_time <= total_time):
 	current_position, current_speed = get_next_status(current_position, current_speed, current_acceleration, t)
 	current_time += t
 
+	temp_t = t
+
 	while (current_position[0] < 0): #try to approach zero, but above zero
 
-		print("inside approaching zero ", current_position[0])
+		print("inside approaching zero ", current_position[0],"current temprory time", current_time)
 
-		temp_t = last_position[0]/(last_position[0] - current_position[0])*t
+		temp_t = last_position[0]/(last_position[0] - current_position[0])*temp_t
 		current_acceleration = -g + k/m * dot(A_falling, last_position) + ends
 		current_position, current_speed = get_next_status(last_position, last_speed, last_acceleration, temp_t)
 		current_time = last_time + temp_t	
