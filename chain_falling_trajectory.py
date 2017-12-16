@@ -1,3 +1,5 @@
+#python 3
+
 from pylab import *
 
 def get_next_status(current_position, current_speed, acceleration, t):
@@ -52,7 +54,7 @@ current_speed = initial_speed
 current_acceleration = -g + k/m * dot(A_falling, current_position) + ends
 current_time = 0
 
-total_time = 2
+total_time = 3
 plot([0,total_time], [0,0], '-b')
 
 
